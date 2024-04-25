@@ -25,7 +25,12 @@
         align="center"
       ></el-table-column>
 
-      <el-table-column label="Description" prop="description" width="200px" align="center">
+      <el-table-column label="Description" width="200px" >
+        <template v-slot="scope">
+          <p style="height: 50px;">
+            {{ scope.row.description }}
+          </p>
+        </template>
       </el-table-column>
 
       <el-table-column label="Type" prop="type" width="100" align="center">
@@ -64,9 +69,9 @@
   <!-- Add pop-up box -->
   <el-dialog title="New" v-model="newVisible">
     <el-form :model="newForm">
-      <el-form-item label="Id">
+      <!-- <el-form-item label="Id">
         <el-input v-model="newForm.id"></el-input>
-      </el-form-item>
+      </el-form-item> -->
 
       <el-form-item label="Type         ">
         <el-input v-model="newForm.type"></el-input>
@@ -357,4 +362,8 @@ export default defineComponent({
 });
 </script>
 
-<style scoped></style>
+
+<style scoped>
+
+</style>
+

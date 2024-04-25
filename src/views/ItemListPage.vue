@@ -275,6 +275,8 @@ export default defineComponent({
       pic: "",
       content: "",
       endTime: "",
+      bidCount: "",
+      highestBid: ""
     });
 
     function editRow(row) {
@@ -284,6 +286,8 @@ export default defineComponent({
       editForm.pic = row.pic;
       editForm.content = row.content;
       editForm.endTime = row.endTime;
+      editForm.bidCount = row.bidCount;
+      editForm.highestBid = row.highestBid;
       editVisible.value = true;
     }
 
@@ -293,6 +297,8 @@ export default defineComponent({
         title: editForm.title,
         content: editForm.content,
         endTime: editForm.endTime,
+        bidCount: editForm.bidCount,
+        highestBid: editForm.highestBid
     };
 
     const result = await HttpManager.updateItem(item) as ResponseBody;
